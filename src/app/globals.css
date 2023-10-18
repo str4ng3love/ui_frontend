@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+--base: rgb(25, 25, 25);
+--text: rgb(230, 230, 230);
+--textInactive: rgb(190, 190, 190);
+--primaryColor: rgb(34, 6, 39);
+--secondaryColor: rgb(12, 12, 32);
+--link: rgb(94, 162, 226);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+background-color: var(--base);
+color: var(--text) ;
+min-width: min-content;
+}
