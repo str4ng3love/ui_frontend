@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 async function handler(req: Request) {
   if (req.method === "GET") {
+   
     try {
       const cookieStore = cookies();
       const jwt = cookieStore.get("JWT");
@@ -14,6 +15,7 @@ async function handler(req: Request) {
           Authorization: `Bearer ${jwt?.value}`,
         },
       });
+      
       if (resp.ok) {
         const doctrines = await resp.json();
         const alphaBetaDoctrines = doctrines.sort((a:{name:string},b:{name:string})=>a.name.localeCompare(b.name))
